@@ -73,7 +73,7 @@ body.image-page::before {
   inset: 0;
   z-index: -2;
   content: "";
-  background-image: url("pozadina2.jpg");
+  background-image: url("assets/abstract/abstract-02.webp");
   background-position: center;
   background-size: cover;
 }
@@ -99,7 +99,7 @@ body.texture-page::before {
   inset: 0;
   z-index: -2;
   content: "";
-  background-image: url("pozadina.jpg");
+  background-image: url("assets/abstract/abstract-04.webp");
   background-position: center;
   background-size: cover;
 }
@@ -167,7 +167,7 @@ button {
   inset: 0;
   z-index: -1;
   content: "";
-  background-image: url("pozadina.jpg");
+  background-image: url("assets/abstract/abstract-01.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
