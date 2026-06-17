@@ -3,6 +3,7 @@ const pageOrder = [
   "sta-je-sumart.html",
   "nasa-misija.html",
   "projekti.html",
+  "kuks.html",
   "kontakt.html",
   "creality-tv.html",
 ];
@@ -54,6 +55,80 @@ document.querySelectorAll("a[href]").forEach((link) => {
     goToPage(url.href, getDirection(currentPage, nextPage));
   });
 });
+
+const teamCards = document.querySelectorAll(".team-card[data-member-name]");
+const teamModal = document.querySelector("#teamModal");
+
+if (teamCards.length && teamModal) {
+  const modalPhoto = teamModal.querySelector(".team-modal__photo");
+  const modalName = teamModal.querySelector(".team-modal__name");
+  const modalRole = teamModal.querySelector(".team-modal__role");
+  const modalBio = teamModal.querySelector(".team-modal__bio");
+  const modalClose = teamModal.querySelector(".team-modal__close");
+  let activeTeamCard = null;
+
+  teamCards.forEach((card) => {
+    card.addEventListener("click", () => openTeamModal(card));
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+
+      event.preventDefault();
+      openTeamModal(card);
+    });
+  });
+
+  modalClose?.addEventListener("click", closeTeamModal);
+
+  teamModal.addEventListener("click", (event) => {
+    if (event.target === teamModal) {
+      closeTeamModal();
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && teamModal.classList.contains("is-open")) {
+      closeTeamModal();
+    }
+  });
+
+  function openTeamModal(card) {
+    const { memberName, memberRole, memberBio, memberImage, memberInitials } = card.dataset;
+
+    activeTeamCard = card;
+    modalName.textContent = memberName || "";
+    modalRole.textContent = memberRole || "";
+    modalBio.textContent = memberBio || "";
+    modalPhoto.innerHTML = "";
+
+    if (memberImage) {
+      const image = document.createElement("img");
+      image.src = memberImage;
+      image.alt = memberName || "";
+      modalPhoto.appendChild(image);
+      modalPhoto.classList.remove("team-modal__photo--placeholder");
+    } else {
+      const initials = document.createElement("span");
+      initials.textContent = memberInitials || "";
+      modalPhoto.appendChild(initials);
+      modalPhoto.classList.add("team-modal__photo--placeholder");
+    }
+
+    teamModal.classList.add("is-open");
+    document.body.classList.add("has-open-modal");
+    teamModal.setAttribute("aria-hidden", "false");
+    modalClose?.focus();
+  }
+
+  function closeTeamModal() {
+    teamModal.classList.remove("is-open");
+    document.body.classList.remove("has-open-modal");
+    teamModal.setAttribute("aria-hidden", "true");
+    activeTeamCard?.focus();
+    activeTeamCard = null;
+  }
+}
 
 function goToPage(href, direction) {
   document.body.classList.add(

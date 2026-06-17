@@ -15,6 +15,7 @@
         <a class="is-active" href="sta-je-sumart.html">Šta je SumArt</a>
         <a href="nasa-misija.html">Naša misija</a>
         <a href="projekti.html">Projekti</a>
+        <a href="kuks.html">KUKS</a>
         <a href="kontakt.html">Kontakt</a>
         <a href="creality-tv.html">Creality TV</a>
       </nav>
@@ -79,7 +80,7 @@
         <section class="content-grid">
           <h2 class="block-title">Tim</h2>
           <div class="team-grid">
-            <article class="team-card">
+            <article class="team-card" role="button" tabindex="0" data-member-name="Jelena Simić" data-member-role="Osnivač i predsednik SumArt-a" data-member-image="s200_jelena.simi_.jpg" data-member-bio="Jelena Simić je istoričarka umetnosti i ekspertkinja za kulturnu diplomatiju, interkulturalni dijalog i međunarodne programe u kulturi. Kroz SumArt razvija platformu koja povezuje istraživanje, javni program, umetničku produkciju i međunarodnu saradnju. Njeno iskustvo usmereno je na građenje prostora u kome se kulturna baština, savremena umetnost i mladi autori susreću kroz konkretne projekte.">
               <figure class="team-photo">
                 <img src="s200_jelena.simi_.jpg" alt="Jelena Simić">
               </figure>
@@ -89,7 +90,7 @@
                 <p>Istoričarka umetnosti i ekspertkinja za kulturnu diplomatiju, interkulturalni dijalog i međunarodne programe u kulturi.</p>
               </div>
             </article>
-            <article class="team-card">
+            <article class="team-card" role="button" tabindex="0" data-member-name="Irina Tomić" data-member-role="Istoričar umetnosti, kustos i profesor" data-member-image="irina-tomic-fsu.jpg" data-member-bio="Irina Tomić je doktor istorije umetnosti, etnolog-antropolog i univerzitetska profesorka. Njeno profesionalno polje obuhvata kustosku praksu, istraživanje kulturnog nasleđa i rad sa studentima. U okviru SumArt-a doprinosi razvoju stručnih programa, javnih razgovora i formata koji povezuju teorijsko znanje sa savremenim kulturnim praksama.">
               <figure class="team-photo">
                 <img src="irina-tomic-fsu.jpg" alt="Irina Tomić">
               </figure>
@@ -99,7 +100,7 @@
                 <p>Doktor istorije umetnosti, etnolog-antropolog i univerzitetska profesorka sa iskustvom u kustoskoj praksi i istraživanju kulturnog nasleđa.</p>
               </div>
             </article>
-            <article class="team-card">
+            <article class="team-card" role="button" tabindex="0" data-member-name="Oliver Tomić" data-member-role="Istoričar umetnosti i univerzitetski profesor" data-member-image="Oliver%202.jpg" data-member-bio="Oliver Tomić je profesor, istraživač i urednik naučnog časopisa, sa fokusom na srednjovekovnu, vizantijsku i savremenu umetničku praksu. Njegov rad spaja akademsku preciznost, uredničko iskustvo i širi pogled na istoriju umetnosti. U SumArt timu učestvuje u oblikovanju istraživačkih i edukativnih programa.">
               <figure class="team-photo">
                 <img src="Oliver%202.jpg" alt="Oliver Tomić">
               </figure>
@@ -109,7 +110,7 @@
                 <p>Profesor, istraživač i urednik naučnog časopisa, usmeren na srednjovekovnu, vizantijsku i savremenu umetničku praksu.</p>
               </div>
             </article>
-            <article class="team-card">
+            <article class="team-card" role="button" tabindex="0" data-member-name="Ana Novaković Vučković" data-member-role="Finansije, administracija i projektna koordinacija" data-member-initials="AN" data-member-bio="Ana Novaković Vučković je zadužena za finansijsko i administrativno upravljanje, budžetske procese i operativnu podršku kulturnim projektima. Njena uloga obezbeđuje da ideje imaju jasan organizacioni okvir, urednu dokumentaciju i stabilnu projektnu dinamiku od planiranja do realizacije.">
               <figure class="team-photo team-photo--placeholder">
                 <span>AN</span>
               </figure>
@@ -119,7 +120,7 @@
                 <p>Stručnjakinja za finansijsko i administrativno upravljanje, budžetske procese i operativnu podršku kulturnim projektima.</p>
               </div>
             </article>
-            <article class="team-card">
+            <article class="team-card" role="button" tabindex="0" data-member-name="Sara Werkee" data-member-role="Međunarodni javni programi" data-member-initials="SW" data-member-bio="Sara Werkee radi u polju savremene umetnosti, kuratorskog menadžmenta i razvoja međunarodnih kulturnih inicijativa. U SumArt okruženju učestvuje u povezivanju partnera, javnih programa i formata koji domaće umetničke i istraživačke prakse otvaraju prema međunarodnoj sceni.">
               <figure class="team-photo team-photo--placeholder">
                 <span>SW</span>
               </figure>
@@ -133,6 +134,17 @@
         </section>
       </div>
     </main>
+    <div class="team-modal" id="teamModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="teamModalName">
+      <div class="team-modal__panel">
+        <button class="team-modal__close" type="button" aria-label="Zatvori">×</button>
+        <figure class="team-modal__photo"></figure>
+        <div class="team-modal__copy">
+          <h2 class="team-modal__name" id="teamModalName"></h2>
+          <span class="team-modal__role"></span>
+          <p class="team-modal__bio"></p>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
