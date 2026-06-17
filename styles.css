@@ -727,7 +727,10 @@ button {
 
 .team-modal__panel {
   position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   width: min(620px, 100%);
+  max-height: calc(100svh - 36px);
   overflow: hidden;
   border: 1px solid rgba(32, 32, 32, 0.18);
   background: var(--paper);
@@ -772,7 +775,7 @@ button {
 .team-modal__photo {
   position: relative;
   width: 100%;
-  min-height: clamp(280px, 48vw, 430px);
+  min-height: clamp(220px, 42svh, 390px);
   margin: 0;
   overflow: hidden;
   background:
@@ -800,6 +803,7 @@ button {
 
 .team-modal__copy {
   padding: clamp(26px, 5vw, 42px);
+  overflow-y: auto;
 }
 
 .team-modal__name {
@@ -1096,12 +1100,10 @@ button {
 @keyframes pageReveal {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
