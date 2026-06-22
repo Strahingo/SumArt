@@ -78,7 +78,7 @@ body.image-page::before {
   inset: 0;
   z-index: -2;
   content: "";
-  background-image: url("assets/abstract/abstract-02.webp");
+  background-image: url("pozadina2.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -104,7 +104,7 @@ body.texture-page::before {
   inset: 0;
   z-index: -2;
   content: "";
-  background-image: url("assets/abstract/abstract-04.webp");
+  background-image: url("pozadina.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -172,7 +172,7 @@ button {
   inset: 0;
   z-index: -1;
   content: "";
-  background-image: url("assets/abstract/abstract-01.webp");
+  background-image: url("pozadina.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -473,15 +473,6 @@ button {
 .video-slot:hover img {
   filter: saturate(1) contrast(1.08);
   transform: scale(1.035);
-}
-
-.visual-frame figcaption {
-  position: absolute;
-  right: 16px;
-  bottom: 14px;
-  left: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.78rem;
 }
 
 .visual-strip {
